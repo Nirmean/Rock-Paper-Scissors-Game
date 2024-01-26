@@ -1,9 +1,12 @@
 // create buttons for user to play game with event listener
 
 // JQuery
-const rock = $("<button>").addClass("rock").text("Rock").on("click", playersMove('rock'));
-const paper = $("<button>").addClass("paper").text("Paper").on("click", playersMove('paper'));
-const scissors = $("<button>").addClass("scissors").text("Scissors").on("click", playersMove('scissors'));
+const rock = $("<button>").addClass("rock").text("Rock").on("click", function() {
+    playersMove('rock');});
+const paper = $("<button>").addClass("paper").text("Paper").on("click", function() {
+    playersMove('paper');});
+const scissors = $("<button>").addClass("scissors").text("Scissors").on("click", function() {
+    playersMove('scissors');});
 const reset = $("<button>").addClass("reset").text("Reset Score");
 const buttonContainer = $("<div>").addClass("btn-container");
 $(buttonContainer).append(rock, paper, scissors, reset);
