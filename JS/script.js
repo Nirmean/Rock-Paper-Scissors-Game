@@ -9,17 +9,6 @@ const buttonContainer = $("<div>").addClass("btn-container");
 $(buttonContainer).append(rock, paper, scissors, reset);
 $("body").append(buttonContainer);
 
-// Vanilla Javascript
-// const rock = document.createElement("button");
-// rock.innerHTML = "rock";
-// const paper = document.createElement("button");
-// paper.innerHTML = "paper";
-// const scissors = document.getElementById("scissors")
-// scissors.innerHTML = "scissors";
-// document.body.appendChild(rock);
-// document.body.appendChild(paper);
-// document.body.appendChild(scissors);
-
 // function that creates the computers move
 
 function pickComputerMove() {
@@ -48,11 +37,35 @@ function playersMove(playerMove) {
     let result = '';
 
     // if statements that compare player move with computer move (for all positions)
-    if (playerMove === rock) {
-        result = 'tie';
+    if (playerMove === 'scissors') {
+        if (computerMove === 'rock') {
+            result = 'lose';
+        } else if (computerMove === 'paper') {
+            result = 'win'
+        } else if (computerMove === 'scissors') {
+            result = 'tie';
+        }
+
+    } else if (playerMove === 'paper') {
+        if (computerMove === 'rock') {
+            result = 'win';
+        } else if (computerMove === 'paper') {
+            result = 'tie'
+        } else if (computerMove === 'scissors') {
+            result = 'lose';
+        }
+        
+    } else if (playerMove === 'rock') {
+        if (computerMove === 'rock') {
+            result = 'tie';
+        } else if (computerMove === 'paper') {
+            result = 'lose'
+        } else if (computerMove === 'scissors') {
+            result = 'win';
+        }
     }
      // alert results   
-    alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}.`);
+    alert(`You picked ${playerMove}. Computer picked ${computerMove}. You ${result}.`);
 }
 
 
