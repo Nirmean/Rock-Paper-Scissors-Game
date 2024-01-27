@@ -12,6 +12,13 @@ const buttonContainer = $("<div>").addClass("btn-container");
 $(buttonContainer).append(rock, paper, scissors, reset);
 $("body").append(buttonContainer);
 
+// object to store reset scores
+const score = {
+    wins: 0,
+    losses: 0,
+    ties: 0,
+}
+
 // function that creates the computers move
 
 function pickComputerMove() {
@@ -67,6 +74,16 @@ function playersMove(playerMove) {
             result = 'win';
         }
     }
+
+    // if statements to add score results
+    if (playerMove === 'win') {
+        score.wins += 1;
+    } else if (playerMove === 'tie') {
+        score.ties += 1;
+    } else if (playerMove === 'losses') {
+        score.losses += 1;
+    }
+
      // alert results   
     alert(`You picked ${playerMove}. Computer picked ${computerMove}. You ${result}.`);
 }
