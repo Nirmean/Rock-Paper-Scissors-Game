@@ -27,11 +27,15 @@ const score = {
 }
 
 // crea
-reset.on("click", function () {resetScore()});
+reset.on("click", function() {resetScore()});
 
 function resetScore () {
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
     $(resultsContainer).text(`Your score: Wins: 0. Losses: 0. Ties: 0`)
 }
+
 
 // function that creates the computers move
 
