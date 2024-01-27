@@ -12,11 +12,22 @@ const buttonContainer = $("<div>").addClass("btn-container");
 $(buttonContainer).append(rock, paper, scissors, reset);
 $("body").append(buttonContainer);
 
-// object to store reset scores
+reset.on("click", function() {
+    resetScore()
+} );
+
+
+// object to store baseline scores
 const score = {
     wins: 0,
     losses: 0,
     ties: 0,
+}
+
+function resetScore () {
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
 }
 
 // function that creates the computers move
@@ -76,16 +87,18 @@ function playersMove(playerMove) {
     }
 
     // if statements to add score results
-    if (playerMove === 'win') {
+    if (result === 'win') {
         score.wins += 1;
-    } else if (playerMove === 'tie') {
+    } else if (result === 'tie') {
         score.ties += 1;
-    } else if (playerMove === 'losses') {
+    } else if (result === 'lose') {
         score.losses += 1;
     }
 
+
+
      // alert results   
-    alert(`You picked ${playerMove}. Computer picked ${computerMove}. You ${result}.`);
+    alert(`You picked ${playerMove}. Computer picked ${computerMove}. You ${result}. Your score: Wins: ${score.wins}. Losses: ${score.losses}. Ties: ${score.ties}`);
 }
 
 
