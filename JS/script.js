@@ -8,13 +8,15 @@ const paper = $("<button>").addClass("paper").text("Paper").on("click", function
 const scissors = $("<button>").addClass("scissors").text("Scissors").on("click", function() {
     playersMove('scissors');});
 const reset = $("<button>").addClass("reset").text("Reset Score");
+
+// create container to store buttons & append button to body webpage
 const buttonContainer = $("<div>").addClass("btn-container");
 $(buttonContainer).append(rock, paper, scissors, reset);
 $("body").append(buttonContainer);
 
-reset.on("click", function() {
-    resetScore()
-} );
+// create container to store score results and append to body webpage
+const resultsContainer = $("<div>").addClass("results-container");
+$("body").append(resultsContainer);
 
 
 // object to store baseline scores
@@ -24,10 +26,11 @@ const score = {
     ties: 0,
 }
 
+// crea
+reset.on("click", function () {resetScore()});
+
 function resetScore () {
-    score.wins = 0;
-    score.losses = 0;
-    score.ties = 0;
+    $(resultsContainer).text(`Your score: Wins: 0. Losses: 0. Ties: 0`)
 }
 
 // function that creates the computers move
@@ -98,9 +101,5 @@ function playersMove(playerMove) {
 
 
      // alert results   
-    alert(`You picked ${playerMove}. Computer picked ${computerMove}. You ${result}. Your score: Wins: ${score.wins}. Losses: ${score.losses}. Ties: ${score.ties}`);
+    $(resultsContainer).text(`You picked ${playerMove}. Computer picked ${computerMove}. You ${result}. Your score: Wins: ${score.wins}. Losses: ${score.losses}. Ties: ${score.ties}`);
 }
-
-
-// var that holds the score baseline
-// var/button that resets scores to 0
