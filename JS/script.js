@@ -1,23 +1,27 @@
 // create buttons for user to play game with event listener
 
 // JQuery
-const rock = $("<button>").addClass("rock").text("Rock").on("click", function() {
+const rock = $("<button>").addClass("rock").html("🪨").on("click", function() {
     playersMove('rock');});
-const paper = $("<button>").addClass("paper").text("Paper").on("click", function() {
+const paper = $("<button>").addClass("paper").html("🗞️").on("click", function() {
     playersMove('paper');});
-const scissors = $("<button>").addClass("scissors").text("Scissors").on("click", function() {
+const scissors = $("<button>").addClass("scissors").html("✂️").on("click", function() {
     playersMove('scissors');});
-const reset = $("<button>").addClass("reset").text("Reset Score");
+const reset = $("<button>").addClass("reset").html("⏪");
 
 // create container to store buttons & append button to body webpage
 const buttonContainer = $("<div>").addClass("btn-container");
 $(buttonContainer).append(rock, paper, scissors, reset);
-$("body").append(buttonContainer);
+// $("body").append(buttonContainer);
 
 // create container to store score results and append to body webpage
 const resultsContainer = $("<div>").addClass("results-container");
-$("body").append(resultsContainer);
+// $("body").append(resultsContainer);
 
+
+const gameContainer = $("<div>").addClass("game-area");
+$("body").append(gameContainer);
+$(gameContainer).append(buttonContainer, resultsContainer);
 
 // object to store baseline scores
 const score = {
@@ -26,7 +30,7 @@ const score = {
     ties: 0,
 }
 
-// crea
+// reset onclick function to execute resetScore function
 reset.on("click", function() {resetScore()});
 
 function resetScore () {
@@ -35,6 +39,8 @@ function resetScore () {
     score.ties = 0;
     $(resultsContainer).text(`Your score: Wins: 0. Losses: 0. Ties: 0`)
 }
+
+
 
 
 // function that creates the computers move

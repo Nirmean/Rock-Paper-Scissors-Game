@@ -1,7 +1,23 @@
 body {
     background-color: rgb(12, 12, 24);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.game-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .results-container {
-    color: white;
+    color: rgb(252, 245, 229);
+    padding: 1rem;
+    text-align: center;
+}
+
+.btn-container {
+    padding: 1rem;
 }
