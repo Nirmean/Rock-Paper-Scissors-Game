@@ -111,5 +111,5 @@ function playersMove(playerMove) {
 
 
      // alert results   
-    $(resultsContainer).text(`You picked ${playerMove}. Computer picked ${computerMove}. You ${result}. Your score: Wins: ${score.wins}. Losses: ${score.losses}. Ties: ${score.ties}`);
+    $(resultsContainer).html(`You picked ${playerMove}. <br>Computer picked ${computerMove}. <br>You ${result}. <br>Your score: Wins: ${score.wins}. Losses: ${score.losses}. Ties: ${score.ties}`);
 }
