@@ -2,6 +2,9 @@
 
 Welcome to the Rock-Paper-Scissors game! This web application allows users to play the classic Rock-Paper-Scissors game against a computer opponent. Keep track of your wins, losses, and ties as you challenge the computer in this timeless game.
 
+## Deployed URL:
+https://nirmean.github.io/Rock-Paper-Scissors-Game/
+
 ## Table of Contents
 
 - [Overview](#overview)
@@ -38,7 +41,7 @@ This web application is a simple and interactive implementation of the Rock-Pape
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/nirmean/rock-paper-scissors.git
+   git clone https://github.com/Nirmean/Rock-Paper-Scissors-Game.git
 
 
 ## Contributing
