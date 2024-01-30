@@ -26,10 +26,11 @@ This web application is a simple and interactive implementation of the Rock-Pape
 
 ## Technologies Used
 
-- ![HTML5 Logo](https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg) HTML
-- ![CSS3 Logo](https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg) CSS
-- ![JavaScript Logo](https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg) JavaScript
-- ![jQuery Logo](https://raw.githubusercontent.com/devicons/devicon/master/icons/jquery/jquery-original.svg) jQuery
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML5 Logo" width="30" height="30"> HTML
+- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS3 Logo" width="30" height="30"> CSS
+- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript Logo" width="30" height="30"> JavaScript
+- <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jquery/jquery-original.svg" alt="jQuery Logo" width="30" height="30"> jQuery
+
 
 
 ## Installation
