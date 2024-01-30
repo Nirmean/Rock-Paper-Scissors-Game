@@ -6,6 +6,12 @@ body {
     justify-content: center;
 }
 
+h1 {
+    font-family: 'Arial', sans-serif; /* Set the font-family */
+    color: #fdf5ea;
+    text-align: center;
+}
+
 .game-area {
     display: flex;
     flex-direction: column;
@@ -18,6 +24,26 @@ body {
     text-align: center;
 }
 
+button {
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    font-size: 3rem; 
+    cursor: pointer;
+}
+
 .btn-container {
     padding: 1rem;
+}
+
+.reset-game {
+    display: none;
+}
+
+.results-container {
+    font-family: 'Arial', sans-serif; /* Set the font-family */
+    font-size: 18px; /* Set the font size */
+    color: #fdf5ea; /* Set the text color */
+    text-align: center; /* Align text to the center */
+    margin-top: 10px; /* Add margin to the top for spacing */
 }

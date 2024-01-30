@@ -7,21 +7,25 @@ const paper = $("<button>").addClass("paper").html("🗞️").on("click", functi
     playersMove('paper');});
 const scissors = $("<button>").addClass("scissors").html("✂️").on("click", function() {
     playersMove('scissors');});
-const reset = $("<button>").addClass("reset").html("⏪");
+const reset = $("<button>").addClass("reset").html("⏪").on("click", function() { resetScore(); });;
 
 // create container to store buttons & append button to body webpage
 const buttonContainer = $("<div>").addClass("btn-container");
-$(buttonContainer).append(rock, paper, scissors, reset);
+$(buttonContainer).append(rock, paper, scissors);
+
 // $("body").append(buttonContainer);
 
 // create container to store score results and append to body webpage
 const resultsContainer = $("<div>").addClass("results-container");
 // $("body").append(resultsContainer);
 
+const resetContainer = $("<div>").addClass("reset-game");
+$(resetContainer).append(reset);
+
 
 const gameContainer = $("<div>").addClass("game-area");
 $("body").append(gameContainer);
-$(gameContainer).append(buttonContainer, resultsContainer);
+$(gameContainer).append(buttonContainer, resultsContainer, resetContainer);
 
 // object to store baseline scores
 const score = {
@@ -65,6 +69,13 @@ function pickComputerMove() {
 // playGame function that takes in player move and compares with computer
 
 function playersMove(playerMove) {
+
+    // assign emojis to player moves
+    const emojiMap = {
+        'rock': "🪨",
+        'paper': "🗞️",
+        'scissors': "✂️",
+    };
     // create a var that stores the computer move function
     const computerMove = pickComputerMove();
     // empty variable for the result
@@ -75,7 +86,7 @@ function playersMove(playerMove) {
         if (computerMove === 'rock') {
             result = 'lose';
         } else if (computerMove === 'paper') {
-            result = 'win'
+            result = 'win';
         } else if (computerMove === 'scissors') {
             result = 'tie';
         }
@@ -84,7 +95,7 @@ function playersMove(playerMove) {
         if (computerMove === 'rock') {
             result = 'win';
         } else if (computerMove === 'paper') {
-            result = 'tie'
+            result = 'tie';
         } else if (computerMove === 'scissors') {
             result = 'lose';
         }
@@ -110,6 +121,13 @@ function playersMove(playerMove) {
 
 
 
-     // alert results   
-    $(resultsContainer).html(`You picked ${playerMove}. <br>Computer picked ${computerMove}. <br>You ${result}. <br>Your score: Wins: ${score.wins}. Losses: ${score.losses}. Ties: ${score.ties}`);
+    // Display emojis in the alert
+    const playerEmoji = emojiMap[playerMove];
+    const computerEmoji = emojiMap[computerMove];
+
+    resetContainer.css('display', 'block');
+
+
+    // Display results   
+    $(resultsContainer).html(`You picked ${playerEmoji}. <br>Computer picked ${computerEmoji}. <br>You ${result}. <br>Your score: Wins: ${score.wins}. Losses: ${score.losses}. Ties: ${score.ties}.`);
 }
